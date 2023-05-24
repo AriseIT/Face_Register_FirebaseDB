@@ -1,0 +1,25 @@
+<!doctype html>
+<title>Registration</title>
+<h2>Select a photo to upload</h2>
+<p>
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<ul class=flashes>
+		{% for message in messages %}
+		  <li>{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}
+</p>
+<form method="post" action="/" enctype="multipart/form-data">
+    <dl>
+		<p>
+			<input type="file" name="file" autocomplete="off" required>
+		</p>
+    </dl>
+	Student name: <input name="name"> <br><br>
+	Enter class: <input name="class"> <br><br>
+	Enter id: <input name="id"> <br><br>
+	<button type="submit">submit</button>
+</form>
